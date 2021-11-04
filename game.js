@@ -3,6 +3,11 @@
 const prompt = require("prompt-sync")()
 const {Human} = require("./human")
 const {AI} = require("./ai")
+const {Rock} = require("./rock")
+const {Paper} = require("./paper")
+const {Scissors} = require("./scissors")
+const {Lizard} = require("./lizard")
+const {Spock} = require("./spock")
 
 class Game {
     constructor(aName) {

@@ -61,61 +61,20 @@ class Game {
             this.playerOne.pickGesture()
             console.log(`${this.playerTwo.aName} Pick a gesture. \n Type '1' for Rock \n Type '2' for Paper \n Type '3' for Scissors \n Type '4' for Lizard \n Type '5' for Spock`)
             this.playerTwo.pickGesture()
-            if(this.playerOne.gesture == this.gestures[0] && (this.playerTwo.gesture == this.gestures[2] || this.playerTwo.gesture == this.gestures[3])){
+            if(this.playerOne.gesture.isWinner[0] == this.playerTwo.gesture.aName || this.playerOne.gesture.isWinner[1] == this.playerTwo.gesture.aName){
                 this.playerOne.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
+                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture.aName}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture.aName}.`)
                 console.log(`${this.playerOne.aName} now has ${this.playerOne.points} point(s)`)
             }
-            else if(this.playerOne.gesture == this.gestures[2] && (this.playerTwo.gesture == this.gestures[1] || this.playerTwo.gesture == this.gestures[3])){
-                this.playerOne.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerOne.aName} now has ${this.playerOne.points} point(s)`)
-            }
-            else if(this.playerOne.gesture == this.gestures[1] && (this.playerTwo.gesture == this.gestures[0] || this.playerTwo.gesture == this.gestures[4])){
-                this.playerOne.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerOne.aName} now has ${this.playerOne.points} point(s)`)
-            }
-            else if(this.playerOne.gesture == this.gestures[3] && (this.playerTwo.gesture == this.gestures[4] || this.playerTwo.gesture == this.gestures[1])){
-                this.playerOne.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerOne.aName} now has ${this.playerOne.points} point(s)`)
-            }
-            else if(this.playerOne.gesture == this.gestures[4] && (this.playerTwo.gesture == this.gestures[2] || this.playerTwo.gesture == this.gestures[0])){
-                this.playerOne.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerOne.aName} now has ${this.playerOne.points} point(s)`)
-            }
-            else if(this.playerTwo.gesture == this.gestures[0] && (this.playerOne.gesture == this.gestures[2] || this.playerOne.gesture == this.gestures[3])){
+            else if(this.playerTwo.gesture.isWinner[0] == this.playerOne.gesture.aName || this.playerTwo.gesture.isWinner[1] == this.playerOne.gesture.aName){
                 this.playerTwo.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerTwo.aName} now has ${this.playerTwo.points} point(s)`)
-            }
-            else if(this.playerTwo.gesture == this.gestures[2] && (this.playerOne.gesture == this.gestures[1] || this.playerOne.gesture == this.gestures[3])){
-                this.playerTwo.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerTwo.aName} now has ${this.playerTwo.points} point(s)`)
-            }
-            else if(this.playerTwo.gesture == this.gestures[1] && (this.playerOne.gesture == this.gestures[0] || this.playerOne.gesture == this.gestures[4])){
-                this.playerTwo.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerTwo.aName} now has ${this.playerTwo.points} point(s)`)
-            }
-            else if(this.playerTwo.gesture == this.gestures[3] && (this.playerOne.gesture == this.gestures[4] || this.playerOne.gesture == this.gestures[1])){
-                this.playerTwo.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
-                console.log(`${this.playerTwo.aName} now has ${this.playerTwo.points} point(s)`)
-            }
-            else if(this.playerTwo.gesture == this.gestures[4] && (this.playerOne.gesture == this.gestures[2] || this.playerOne.gesture == this.gestures[0])){
-                this.playerTwo.points += 1
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
+                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture.aName}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture.aName}.`)
                 console.log(`${this.playerTwo.aName} now has ${this.playerTwo.points} point(s)`)
             }
             else{
-                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture}.`)
+                console.log( `${this.playerOne.aName} has chosen ${this.playerOne.gesture.aName}. ${this.playerTwo.aName} has chosen ${this.playerTwo.gesture.aName}.`)
                 console.log("Draw! No points awarded to either player.")
             }
-            
         }
     }
     declareWinner() {

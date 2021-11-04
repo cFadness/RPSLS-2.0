@@ -4,7 +4,7 @@ const {Gestures} = require("./gestures")
 
 class Scissors extends Gestures{
     constructor(){
-        super("Rock")
+        super("Scissors")
         this.isWinner = ["Paper", "Lizard"]
     }
 
